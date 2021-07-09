@@ -18,6 +18,9 @@ url = 'https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/c2d65dda-
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def root():
+    return 'deployed'
 
 @app.route('/<path>')
 def speach_to_text(path):
