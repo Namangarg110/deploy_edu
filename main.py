@@ -19,8 +19,8 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
-def root():
-    return 'deployed'
+def home():
+    return 'yipeee'
 
 @app.route('/<path>')
 def speach_to_text(path):
@@ -55,3 +55,5 @@ def image_to_String(og_img_path,res_img_path, width = None, height = None, inter
         my_string = base64.b64encode(img_file.read())
     return my_string
 
+if __name__ == "__main__":
+	app.run(host='127.0.0.1', port=8080, debug=True)
